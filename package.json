@@ -1,0 +1,33 @@
+{
+  "name": "mergegrapghqlschemas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "apollo-link-http": "^1.5.17",
+    "apollo-server": "^2.19.1",
+    "apollo-server-express": "^1.4.0",
+    "body-parser": "^1.19.0",
+    "cross-fetch": "^3.0.6",
+    "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.4.0",
+    "graphql-tools": "^7.0.2",
+    "merge-remote-graphql-schemas": "^0.1.25",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AyaMagdyMohamed/mergeGrapghQLSchemas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AyaMagdyMohamed/mergeGrapghQLSchemas/issues"
+  },
+  "homepage": "https://github.com/AyaMagdyMohamed/mergeGrapghQLSchemas#readme"
+}
