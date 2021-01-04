@@ -18,7 +18,7 @@ const reviews = [
 // The GraphQL schema in string form
 const typeDefs = `
 type Query {
-    book(id: ID!): Book
+    
     review(id: ID!): Review
     reviews :  [Review]
   }
@@ -26,12 +26,7 @@ type Query {
   type Review {
     id: ID!
     title: String!
-    book: Book!
-  }
-  
-  type Book {
-    id: ID!
-    reviews: [Review!]!
+   
   }
 `;
 
