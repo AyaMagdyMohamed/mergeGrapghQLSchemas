@@ -11,7 +11,9 @@
   "dependencies": {
     "apollo-link-http": "^1.5.17",
     "apollo-server": "^2.19.1",
-    "express": "^4.17.1",
-    "merge-remote-graphql-schemas": "^0.1.25"
+    "apollo-server-express": "^2.19.1",
+    "express-graphql": "^0.12.0",
+    "merge-remote-graphql-schemas": "^0.1.25",
+    "node-fetch": "^2.6.1"
   }
 }

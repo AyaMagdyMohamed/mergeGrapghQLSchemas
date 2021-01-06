@@ -1,26 +1,35 @@
-const { ApolloServer, makeRemoteExecutableSchema, introspectSchema } = require('apollo-server');
+const { ApolloServer, makeRemoteExecutableSchema, introspectSchema, introspectionQuery } = require('apollo-server');
 const { HttpLink } = require('apollo-link-http');
 const fetch = require('node-fetch');
 const { mergeRemoteSchemas } = require('merge-remote-graphql-schemas');
 
+
+function fetchRequest(uri){
+
+return fetch(uri, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ query: introspectionQuery })
+})
+ 
+  }
 async function createRemoteExecutableSchema(uri) {
   
+  console.log("uri", uri)
   const httpLink = new HttpLink({
     uri,
     fetch,
   });
 
-  console.log("here")
   const schema = makeRemoteExecutableSchema({
     schema: await introspectSchema(httpLink),
     httpLink,
   });
 
-  console.log("here1")
   return schema;
 };
 
-Promise.all(['http://localhost:8000/products', 'http://localhost:9000/contacts'].map(createRemoteExecutableSchema))
+Promise.all(['http://localhost:5000/graphql2', 'http://localhost:3000/graphql'].map(createRemoteExecutableSchema))
   .then((schemas) => {
    console.log("schemas", schemas)
     const server = new ApolloServer({ schema: mergeRemoteSchemas({ schemas }) }); // Merge the remote schemas together and pass the result to ApolloServer
